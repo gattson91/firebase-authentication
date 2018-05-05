@@ -14,6 +14,7 @@
 		B20E2169209A614000C3142E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20E2168209A614000C3142E /* Assets.xcassets */; };
 		B20E216C209A614000C3142E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B20E216A209A614000C3142E /* LaunchScreen.storyboard */; };
 		B20E2176209A8CB900C3142E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B20E2175209A8CB900C3142E /* GoogleService-Info.plist */; };
+		B2ED356A209D515A0097E14B /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2ED3569209D515A0097E14B /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B20E216B209A614000C3142E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B20E216D209A614000C3142E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B20E2175209A8CB900C3142E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2ED3569209D515A0097E14B /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				B20E2161209A614000C3142E /* AppDelegate.swift */,
 				B20E2163209A614000C3142E /* ViewController.swift */,
+				B2ED3569209D515A0097E14B /* HomeScreenViewController.swift */,
 				B20E2165209A614000C3142E /* Main.storyboard */,
 				B20E2168209A614000C3142E /* Assets.xcassets */,
 				B20E216A209A614000C3142E /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			files = (
 				B20E2164209A614000C3142E /* ViewController.swift in Sources */,
 				B20E2162209A614000C3142E /* AppDelegate.swift in Sources */,
+				B2ED356A209D515A0097E14B /* HomeScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
