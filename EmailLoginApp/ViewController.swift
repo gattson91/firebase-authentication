@@ -34,10 +34,12 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    /**
+    * Checks if they entered the correct username and password, takes them to home screen
+    */
     
+     //TO DO: Do some form validation on email and password
     @IBAction func signInPressed(_ sender: UIButton) {
-    
-    //TO DO: Do some form validation on email and password
     
     if let email = emailTextField.text, let pass = passwordTextField
         {
