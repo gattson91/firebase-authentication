@@ -18,8 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    @IBOutlet weak var signInButton: UIButton!
+
+    @IBOutlet weak var signInButtonLabel: UIButton!
     
     var isOnSignIn: Bool = true
     //Segment 0 is "sign in", segment 1 is "register"
@@ -38,20 +38,22 @@ class ViewController: UIViewController {
     * Checks if they entered the correct username and password, takes them to home screen
     */
     
-     //TO DO: Do some form validation on email and password
-    @IBAction func signInPressed(_ sender: UIButton) {
+     //TODO: Do some form validation on email and password
     
-    if let email = emailTextField.text, let pass = passwordTextField
+    
+    
+    @IBAction func signInPressed(_ sender: Any) {
+        if let email = emailTextField.text, let pass = passwordTextField.text
         {
             
             //Check if it's sign in or register
             if isOnSignIn {
                 //Sign in the user with Firebase
-                Auth.auth().signIn(withEmail: "", password: "", completion: { (user, error) in
+                Auth.auth().signIn(withEmail: email, password: pass, completion: { (user, error) in
                     
                     //Check that user isn't nil
-                    if let u = user {
-                        //User is found, go to home screen
+                    if user != nil {
+                        self.performSegue(withIdentifier: "GoToHome", sender: self)
                     } else {
                         //Error: check error and show message
                     }
@@ -64,8 +66,8 @@ class ViewController: UIViewController {
                 Auth.auth().createUser(withEmail: "", password: "", completion: { (user, error) in
                     
                     //Check that user isn't nil
-                    if let u = user {
-                        //user is found, go to home screen
+                    if user != nil {
+                        self.performSegue(withIdentifier: "GoToHome", sender: self)
                     } else {
                         //Error: check error and show message
                     }
@@ -74,9 +76,6 @@ class ViewController: UIViewController {
         }
     }
     
-
-
-
     
     @IBAction func signInSelectorChanged(_ sender: /* Toggle between sign in and register*/ UISegmentedControl) {
         
@@ -87,15 +86,20 @@ class ViewController: UIViewController {
         //check the bool and set the button and labels
         if isOnSignIn {
             signInLabel.text = "Sign In"
-            signInButton.setTitle("Sign In", for: .normal)
+            signInButtonLabel.setTitle("Sign In", for: .normal)
         }
         else {
             signInLabel.text = "Register"
-            signInButton.setTitle("Register", for: .normal)
+            signInButtonLabel.setTitle("Register", for: .normal)
         }
         
-    
-       
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        //removes keyboard once user is finished typing
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+    }
 }
 
-}
