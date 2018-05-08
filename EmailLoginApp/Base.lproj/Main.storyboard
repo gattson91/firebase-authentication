@@ -79,7 +79,7 @@
                                                 <rect key="frame" x="94" y="0.0" width="256" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -90,9 +90,9 @@
                                             <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="SignInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Db-rD-heW"/>
-                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rVZ-Bb-boN"/>
-                                            <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xpH-wC-fZc"/>
+                                            <action selector="signInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xfu-3L-lzt"/>
+                                            <action selector="signInPressed:forEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7BN-BD-MRK"/>
+                                            <segue destination="fpn-7U-bd4" kind="show" identifier="GoToHome" id="hPx-EN-6DB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -118,9 +118,8 @@
                     <connections>
                         <outlet property="emailTextField" destination="ZP3-VV-Whd" id="uJN-Z0-Trs"/>
                         <outlet property="passwordTextField" destination="eJo-BG-58l" id="72k-31-cCr"/>
-                        <outlet property="signInButton" destination="EFu-3C-96F" id="kTa-yN-Abr"/>
+                        <outlet property="signInButtonLabel" destination="EFu-3C-96F" id="x5u-ra-7X1"/>
                         <outlet property="signInLabel" destination="WtY-uh-KwR" id="87p-Qq-sIa"/>
-                        <outlet property="signInPressed" destination="EFu-3C-96F" id="lN8-vP-cj7"/>
                         <outlet property="signInSelector" destination="LaO-4U-mGi" id="u5Q-1h-i8G"/>
                     </connections>
                 </viewController>
@@ -150,13 +149,29 @@
                     <view key="view" contentMode="scaleToFill" id="7jp-Pa-wTH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Home!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9L1-nf-e7I">
+                                <rect key="frame" x="95.5" y="319" width="184" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.57919406890000003" green="0.17102034646481404" blue="0.55513590216521336" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9L1-nf-e7I" firstAttribute="centerX" secondItem="7jp-Pa-wTH" secondAttribute="centerX" id="HQl-Wa-bsE"/>
+                            <constraint firstItem="9L1-nf-e7I" firstAttribute="centerY" secondItem="7jp-Pa-wTH" secondAttribute="centerY" id="xdC-1d-vVG"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PVT-kh-yKp"/>
                     </view>
+                    <connections>
+                        <outlet property="WelcomeHomeLabel" destination="9L1-nf-e7I" id="ev5-3v-oQN"/>
+                        <outlet property="WelcomeHomeTitle" destination="xdC-1d-vVG" id="FUS-Gw-NnJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhu-DL-BV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="866" y="90"/>
+            <point key="canvasLocation" x="864.79999999999995" y="89.505247376311857"/>
         </scene>
     </scenes>
 </document>
